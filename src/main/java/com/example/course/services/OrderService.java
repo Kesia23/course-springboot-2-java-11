@@ -11,11 +11,11 @@ import com.example.course.repositories.OrderRepository;
 
 @Service
 public class OrderService {
-	
+
 	@Autowired
 	private OrderRepository repository;
 	
-	public List<Order> findAll(){
+	public List<Order> findAll() {
 		return repository.findAll();
 	}
 	
@@ -24,3 +24,4 @@ public class OrderService {
 		return obj.get();
 	}
 }
+

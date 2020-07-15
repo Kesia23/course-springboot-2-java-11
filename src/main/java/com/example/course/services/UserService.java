@@ -32,7 +32,6 @@ public class UserService {
 
 	public User insert(User obj) {
 		return repository.save(obj);
-
 	}
 
 	public void delete(Long id) {
@@ -43,15 +42,14 @@ public class UserService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DatabaseException(e.getMessage());
 		}
-
 	}
 
 	public User update(Long id, User obj) {
 		try {
-		User entity = repository.getOne(id);
-		updateData(entity, obj);
-		return repository.save(entity);
-		} catch(EntityNotFoundException e) {
+			User entity = repository.getOne(id);
+			updateData(entity, obj);
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException(id);
 		}
 	}
